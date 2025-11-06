@@ -20,6 +20,10 @@ app.use("/", router);
 // Resend Client
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
+
 // Contact Route
 router.post("/contact", async (req, res) => {
   try {
